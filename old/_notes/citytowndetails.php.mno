@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_YearDetails" value="name:Year;datatype:real,name:HijriYear;datatype:real,name:YearTotal;datatype:int" />
+	<infoitem key="UD_rs_Years" value="name:Year;datatype:string" />
+	<infoitem key="UD_rs_CityTown" value="name:CityTown;datatype:string" />
+	<infoitem key="UD_rs_CityTownDetails" value="name:Year;datatype:int,name:HijriYear;datatype:int,name:YearTotal;datatype:int" />
+</info>

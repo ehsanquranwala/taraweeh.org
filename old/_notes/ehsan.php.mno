@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_Country" value="name:Country;datatype:string" />
+	<infoitem key="UD_rs_CityTown" value="name:CityTown;datatype:string" />
+	<infoitem key="UD_rs_Region" value="name:Region;datatype:string" />
+</info>

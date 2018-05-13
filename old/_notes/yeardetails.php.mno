@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_YearDetails" value="name:CityTown;datatype:string,name:count(programid);datatype:int" />
+	<infoitem key="UD_rs_Years" value="name:Year;datatype:string" />
+</info>

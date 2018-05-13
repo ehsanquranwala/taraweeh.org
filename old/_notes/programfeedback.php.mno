@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:newfeedbackid;datatype:int" />
+	<infoitem key="UD_rs_Feedback" value="name:newfeedbackid;datatype:int" />
+	<infoitem key="UD_rs_InformationSource" value="name:InformationSourceId;datatype:int,name:InformationSource;datatype:string" />
+	<infoitem key="UD_rs_CityTown" value="name:CityTown;datatype:string" />
+	<infoitem key="UD_rs_Program" value="name:ProgramId;datatype:int,name:Address;datatype:string" />
+	<infoitem key="UD_rs_Region" value="name:Region;datatype:string" />
+</info>

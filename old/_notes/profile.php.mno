@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_User" value="name:UserId;datatype:int,name:Email;datatype:string,name:Password;datatype:string,name:FullName;datatype:string,name:Gender;datatype:string,name:DateOfBirth;datatype:date,name:HomePhone;datatype:string,name:OfficePhone;datatype:string,name:Mobile;datatype:string,name:Address;datatype:string,name:CityTown;datatype:string,name:Region;datatype:string,name:Country;datatype:string,name:Education;datatype:string,name:Profession;datatype:string,name:Details;datatype:blob,name:JoiningYear;datatype:string,name:Responsibilities;datatype:string,name:Halqa;datatype:string,name:MaqamiTanzeem;datatype:int,name:Mutarjim;datatype:int,name:Hafiz;datatype:int,name:Nazim;datatype:int,name:NazimeMaktaba;datatype:int,name:Muawin;datatype:int" />
+	<infoitem key="UD_rs_SpeakersPrograms" value="name:Year;datatype:int,name:Translation;datatype:string,name:Time;datatype:string,name:place;datatype:string" />
+</info>

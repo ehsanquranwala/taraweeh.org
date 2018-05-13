@@ -1,0 +1,55 @@
+<script language="javascript" type="text/javascript">
+	var count1 = 0;
+	var count2 = 0;
+	function handleHttpResponse() {
+		if (http.readyState == 4) {
+			if (div_id != '') {
+				document.getElementById(div_id).innerHTML = http.responseText;
+			}
+		}
+	}
+	function createRequestObject() {
+		var req;
+		if(window.XMLHttpRequest){
+			// Firefox, Safari, Opera...
+			req = new XMLHttpRequest();
+		} else if(window.ActiveXObject) {
+			// Internet Explorer 5+
+			req = new ActiveXObject("Microsoft.XMLHTTP");
+		} else {
+			// There is an error creating the object,
+			// just as an old browser is being used.
+			alert('There was a problem creating the XMLHttpRequest object');
+		}
+		return req;
+	}
+
+	// Make the XMLHttpRequest object
+	var http = createRequestObject();//create request
+	function getScriptPage(div_id1,content_id)
+	{alert("getscript");
+		div_id = div_id1;
+		content = document.getElementById(content_id).value;
+		reqstr="script_signup.php?"+content_id+"="+escape(content);alert(regstr);
+		http.open("GET", reqstr, true);
+		http.onreadystatechange = handleHttpResponse;
+		http.send(null);//send the request
+	}
+</script>
+
+
+<div class="output-div-container">
+	  <div id="output_div1">
+	  <select name="MaqamiTanzeem">
+        <?php
+do {  
+?><option value="<?php echo $row_rs_MaqamiTanzeem['MaqamiTanzeemId']?>"<?php if ($row_rs_MaqamiTanzeem['MaqamiTanzeemId']==6) {echo "selected=\"selected\"";} ?>><?php echo $row_rs_MaqamiTanzeem['MaqamiTanzeem']?></option>
+        <?php
+} while ($row_rs_MaqamiTanzeem = mysqli_fetch_assoc($rs_MaqamiTanzeem));
+  $rows = mysqli_num_rows($rs_MaqamiTanzeem);
+  if($rows > 0) {
+      mysqli_data_seek($rs_MaqamiTanzeem, 0);
+	  $row_rs_MaqamiTanzeem = mysqli_fetch_assoc($rs_MaqamiTanzeem);
+  }
+?><option value="other">other</option>
+      </select></div></div>

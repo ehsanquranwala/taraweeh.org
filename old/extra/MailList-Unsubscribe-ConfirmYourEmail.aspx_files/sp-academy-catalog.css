@@ -1,0 +1,662 @@
+/* CSS Document */
+/** Copyright SunniPath LLC 2006-2007 **/
+
+body {
+    background-color:		#AA9C93;
+	background-image:		url("images/bg-brown-gradient.gif");
+	background-repeat:		repeat-x;
+	background-attachment:	fixed;
+	background-position:	top left;
+	text-align: 			center;
+	min-width:				780px;
+	margin:					0px;
+	font-family:			Verdana, Arial, Helvetica, sans-serif;
+	}
+
+* html body {  /* IE Fix */
+  overflow: hidden;
+  }
+
+
+.Catalog-NumberOfCourses {
+	color: #A99C93;
+	margin-bottom: -12px;
+	}
+
+.Catalog-CourseName, .Catalog-CourseName a, .Catalog-CourseName a:visited {
+	color: #C56926; 
+	font-weight: bold; 
+	font-size: 16px; 
+	text-decoration: none;
+	}
+
+.Catalog-CourseName a:hover {
+	background-color: #FFB; 
+	color: #B7601D;
+	font-weight: bold; 
+	font-size: 16px; 
+	text-decoration: none;
+	padding: 3px 6px 2px 0;
+	border-bottom: 1px solid #C09046;
+	}
+
+.Catalog-CourseSubtitle {
+	color: #B18264;
+	font-size: 14px;
+	}
+
+.CatalogCourseDescription {
+	font-size: 		12px;
+	line-height: 	150%;
+	color:			#3F3631;
+	}
+
+.CatalogCourseDescription a {
+	color: 				#c60;
+	font-size: 			10px;
+	text-decoration:	none;
+	}
+
+.CatalogCourseDescription a:hover {
+	text-decoration:	underline;
+	background-color: #FFB; 
+	padding: 3px 6px 3px 0;
+	}
+
+
+
+/* Header
+---------------------------------------------------------- */
+.logo {
+	position:	relative;	
+	top:	15px;
+	left:	24px;
+	border:	0;
+	float: left;
+	filter: Alpha(opacity=100); /* IE */
+	-moz-opacity: 1; 			/* Mozilla 1.6 and below */
+	opacity: 1;               	/* newer Mozilla and CSS-3 */
+	}
+
+.logo:hover {
+	filter: Alpha(opacity=70);
+	-moz-opacity: 0.7;
+	opacity: 0.7; 
+	}
+
+#Header {
+	width:		780px;
+	height:		90px;
+	background-color: 	#EDD85F;
+	background-image:	url("images/header-bg-yellow.gif");
+	background-repeat:	repeat-x; 
+	float:		none;
+	clear:		both;
+	z-index:	10;
+	margin:		0 auto;
+	text-align: left;
+	border-left:	solid 1px black;
+	border-right:	solid 1px black;
+	}
+
+#HeaderLinks {
+	height:		24px;
+	float:		right;
+	position: relative;
+	top:	12px;
+	z-index:	15;
+	text-align: right;
+	}
+
+#HeaderLinks  ul {
+	margin: 0;
+	padding-right: 10px;
+	list-style: none;
+	background: #383d44;
+	}
+#HeaderLinks  li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	letter-spacing: 1px;
+	font-weight:	bold;	
+	}
+#HeaderLinks  li a {
+	float: left;
+	padding: 4px 12px;
+	text-decoration: none;
+	color: #BC7E31;
+	border: none;
+	background: url("images/nav-bg.gif") no-repeat bottom right;
+	}
+#HeaderLinks  li a:hover {
+	color: #fff;
+	background: #832100;
+	}
+
+
+
+/* Main Navigation Bar
+---------------------------------------------------------- */
+#MainNav {
+	border-right:		solid 1px black;
+	border-left:		solid 1px black;
+	width:		780px;
+	height:		30px;
+	background-color: #785844;
+	background-image:	url("images/TopNav-bg-gradient.gif");
+	background-repeat:	repeat-x;
+	float:		none;
+	clear:		both;
+	margin:		0 auto;
+	text-align: left;
+	}
+
+#MainNav  ul {
+	margin: 0;
+	padding-left: 6px;
+	list-style: none;
+	border-top: 1px solid #464a52;
+	background: #383d44;
+	}
+#MainNav  li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight:	bold;	
+	}
+#MainNav  li a {
+	float: left;
+	padding: 7px 18px;
+	text-decoration: none;
+	color: #E4E0BD;
+	border: none;
+	background: url("images/TopNav-bg-gradient.gif") no-repeat bottom right;
+	}
+#MainNav  li a:hover {
+	color: #fff;
+	background: #684E3E;
+	}
+#MainNav  li a.active {
+	font-weight: bold;
+	color: #BC7E31;
+	background: #fff;
+	border-right: 1px black solid;
+	border-left: 1px black solid;
+	}
+
+
+
+/* Main Container
+---------------------------------------------------------- */
+#AcademyContent {
+	border-left:	solid 1px black;
+	border-right:	solid 1px black;
+	width:		780px;
+	height: 197px;
+	background-color:	#FFF;
+	float:		none;
+	clear:		both;
+	margin:		0 auto;
+	text-align: left;
+
+	}
+
+
+#Breadcrumbs {
+	width:		732px;
+	background-color: white;
+	position:	relative;	
+	top:		20px;
+	clear:		both;
+	margin:		0 auto;
+	padding-bottom:	6px;
+	text-align: left;
+	font-size:	11px;
+	color:		#694E3C;
+	}
+
+#Breadcrumbs	a {
+	color:	#AB998F;
+	text-decoration:	none;
+	}
+
+#Breadcrumbs	a:hover {
+	color:	#930;
+	text-decoration:	underline;
+	}
+
+
+/* Course Catalog
+---------------------------------------------------------- */
+#CourseCatalog-Imagery {
+	width:		732px;
+	height:		90px;
+	background-color: #F2E3A7;
+	position:	relative;	
+	top:		20px;
+	float:		none;
+	clear:		both;
+	margin:		0 auto;
+	text-align: left;
+	}
+
+.CourseCatalog-Images {
+	top:		48px;
+	left:		48px;
+	clear:		none;
+	border:		0;
+	margin:		0;
+	}
+
+
+/* Course Catalog Middle Row
+---------------------------------------------------------- */
+#CourseCatalogRow1 {
+	width:		732px;
+	height:		30px;
+	background-color: #846435;
+	position:	relative;	
+	top:		20px;
+	float:		none;
+	clear:		both;
+	margin:		0 auto;
+	text-align: left;
+	font-size:	10px;
+	color:		#E5D5A1;
+	padding-bottom:	1px;
+	overflow:   hidden;
+	}
+
+#CatalogNav1 {
+	margin:		0;
+	padding:	0;
+	background-color:	#F2E3A7;
+	border:		1px solid #42432d;
+	border-width:	0px 0;
+	}
+
+#CatalogNav1 li {
+	display:	inline;
+	padding-top:	0px;
+	margin:			0px;
+	}
+
+#CatalogNav1 a:link,
+#CatalogNav1 a:visited {
+	background-color:	#9A7D4C;
+	padding:	6px 12px 9px 12px;
+	float:		left;
+	width:		auto;
+	border-right: 	1px solid #71552D;
+	border-left: 	1px solid #71552D;
+	border-top: 	1px solid #71552D;
+	text-decoration: none;
+	font:			12px/12px Verdana, Arial, Helvetica, sans-serif;
+	color:			#fff;
+	text-transform:	capitalize;
+	text-shadow: 	2px 2px 2px #555;
+	margin-right:	3px;
+	margin-top:		3px;
+	}
+
+#CatalogNav1 a:hover {
+	color:		#000;
+	background:	#C6B079;
+	}
+
+#CatalogNav1 li:first-child a {
+	border-left: 	1px solid #71552D;
+	margin-left:	24px;
+	}
+
+#department #nav-department a,
+#program #nav-program a {
+	background:#F2E3A7;
+	color:#000;
+	text-shadow:none;
+	}
+
+#department #nav-department a:hover,
+#program #nav-program a:hover {
+	background:#F2E3A7;
+	}
+
+#CatalogNav1 a:active {
+	background:#F7EEC8;
+	color:#86914C;
+	}
+
+.CatalogNav1-img {
+	float:		right;
+	}
+
+
+/* Course Catalog - Bottom Row
+---------------------------------------------------------- */
+#CourseCatalogRow2 {
+	width:		732px;
+	height:		38px;
+	background:	#F2E3A7 url("images/070425-CC-bg-yellow-grad.gif") bottom repeat-x;
+	position:	relative;	
+	top:		19px;
+	float:		none;
+	clear:		both;
+	margin:		0 auto;
+	text-align: left;
+	padding-top: 0px;
+	}
+
+#CatalogNav2 {
+	margin:		0;
+	padding:	6px;
+	padding-left:	24px;
+	border:		1px solid #42432d;
+	border-width:	0px 0;
+	}
+
+#CatalogNav2  ul {
+	margin: 0;
+	padding-left: 6px;
+	list-style: none;
+	border-top: 1px solid #464a52;
+	background: #383d44;
+	}
+#CatalogNav2  li {
+	display:	inline;
+	padding:	0;
+	margin:		0;
+	color:		#C4B67E;
+	}
+	
+#CatalogNav2  li a {
+	padding:	6px 12px 6px 12px;
+	float:		left;
+	width:		auto;
+	border-right: 	1px solid #D9C98B;
+	text-decoration: none;
+	font:			12px/12px Verdana, Arial, Helvetica, sans-serif;
+	color:			#526A4A;
+	text-transform:	capitalize;
+	}
+
+#CatalogNav2  li a:hover {
+	color:		#fff;
+	background:	#C28031;
+	padding-bottom: 14px; 
+	border-right: 1px solid #A26B35;
+	}
+
+#CatalogNav2  li a.active {
+	background:#fff;
+	color:#B65F1D; 
+	padding-bottom: 14px; 
+	}
+
+
+/* Primary Content
+---------------------------------------------------------- */
+#CP-BottomBody {
+	margin:	0 auto;
+	width:	780px;
+	text-align: left;
+	background-color: #FFF;
+	border-left:	solid 1px black;
+	border-right:	solid 1px black; 
+	width:		780px;
+	float:		none;
+	clear:		both; 
+	position: relative; /* IE 7 Fix */
+	overflow: hidden;
+	}
+
+#CourseListing {
+	width:		504px;
+	position:	relative;	
+	top:		42px;
+	left:		48px;
+	float:		left;
+	clear:		left;
+	margin:		0 auto;
+	text-align: left;
+	}
+
+#CourseListing img {
+	float:			left;
+	margin-right:	18px; 
+	margin-top:		2px;
+	margin-bottom:	0px;
+	float:			left;
+	}
+
+.CL-CourseImage {
+	margin:	24px 12px 36px 0;
+	float:	left;
+	width:	120px;
+	border: 0px;
+	}
+
+.CL-CourseImage img {
+	border: 0px;
+	}
+
+
+.CL-CourseInfo {
+	padding:	24px 0 12px 0;
+	width: 372px;
+	float:	left;
+	border-bottom: 1px solid #ccc;
+	}
+	
+.RegisterButton {
+	margin-bottom:	24px;
+	border: 0px;
+	}
+
+#PageBlurb {
+	width:		504px;
+	min-height: 300px;
+	position:	relative;	
+	top:		42px;
+	left:		0px;
+	float:		left;
+	clear:		left;
+	margin-bottom: 36px;
+	}
+
+.h1 {
+	font-size:	22px;
+	color:	#8C996E;
+	font-weight:	normal;
+	line-height:	100%;
+	}
+
+.TextBox {
+	margin:		0 auto;
+	margin-bottom: 96px;
+	padding: 	12px;
+	border-top:	3px #985B25 solid;
+	text-align: left;
+	background-image: url("images/070328-PopUp-YellowGrad.gif");
+	background-repeat: repeat-y;
+	background-position: top left;
+	line-height: 160%;
+	font-size: 14px;
+	}
+
+.b {
+	font-weight:	bold;
+	color:	6B5951;
+	}
+
+
+/* Sidebar
+---------------------------------------------------------- */
+#CL-SideLinks-Ads {
+	width:		180px;
+	height: 	1200px;
+	position:	relative;
+	top:		0px;
+	left:		92px;
+	float:		left;
+	clear:		right;
+	margin:		0 auto;
+	background-color:	#FFF;
+	}
+
+#SideBar {
+	width:		180px;
+	position:	relative;
+	top:		48px;
+	right:		24px;
+	float:		right;
+	clear:		right;
+	margin:		0 auto;
+	text-align: left;
+	border:		solid 1px #BFAC8E;
+	background-color:	#F2ECC2;
+	}
+
+#SideBar p {
+	height:		12px;
+	}
+
+#SideBar ul li {
+	list-style-type:	none;
+	margin:				0px;
+	padding:			0px;
+	}
+
+#SideBar ul {
+	margin:				0px;
+	padding:			0px;
+	}
+
+#SideBar a, 
+#SideBar a:visited {
+	display:			block;
+	text-decoration:	none;
+	border-bottom:		solid #D9CCA9 1px;
+	padding-top:		6px;
+	padding-bottom:		6px;
+	padding-left:		12px;
+	padding-right:		12px;
+	color:				#B87756;
+	font-weight:		normal;
+	font-size:			12px;	
+	}
+
+#SideBar a:hover {
+	color:				#B65F1D;
+	background-color:	#ff9;
+	}
+
+#SideBar a:active {
+	color:				#B65F1D;
+	background-color:	#F2EC74;
+	}
+
+#SideAds-Right {
+	width:		180px;
+	height:		48px;
+	position:	relative;
+	top:		48px;
+	right:		24px;
+	float:		right;
+	clear:		right;
+	margin:		0 auto;
+	margin-top:	36px;
+	padding-bottom: 24px;
+	text-align: right;
+	border:		none;
+	}
+
+#SideAds-Right img {
+	margin-bottom:	36px;
+	border:	0px;
+	}
+
+
+/* INFORMATION PAGES:
+**************************************************************
+************************************************************** */
+
+#InfoTopPage	 {
+	border-left:	solid 1px black;
+	border-right:	solid 1px black;
+	width:		780px;
+	height: 48px;
+	background-color:	#FFF;
+	float:		none;
+	clear:		both;
+	margin:		0 auto;
+	text-align: left;
+	}
+
+#InformationTitle .h1 {
+	font-size:	22px;
+	color:	#8C996E;
+	font-weight:	normal;
+	line-height:	120%;
+	padding-bottom: 6px;
+	border-bottom: 3px #995A26 solid;
+	}
+
+#InformationCopy {
+	line-height:	147%;
+	margin-bottom:	60px;
+	}
+
+
+#InformationCopy .h2 {
+	color: #6B5951;
+	font-weight: bold;
+	font-size: 14px;
+	}
+	
+
+#InformationSection {
+	width:		504px;
+	position:	relative;	
+	top:		42px;
+	left:		24px;
+	float:		left;
+	clear:		left;
+	margin:		0 auto;
+	text-align: left;
+	}	
+
+.tableText {
+	margin-bottom:	60px;
+	}
+
+#CourseListing, #CL-SideLinks-Ads, #InformationSection  
+	{
+	padding-bottom: 13524px !important;
+	margin-bottom: -13500px !important; 
+	}
+
+#footer {
+	position: relative;
+	padding-bottom: 36px;
+	margin-bottom: -24px;
+    background-color:	#AA9C93;
+	min-width:			780px;
+	margin:				0px auto;
+	}
+
+* html #footer-wrapper {  /* IE Hack */
+	float: 	left;
+	position: 	relative;
+	min-width:		780px;
+	margin:			0px auto;
+	padding-bottom: 36px;
+	margin-bottom: -24px;
+    background-color:		#AA9C93;
+	}

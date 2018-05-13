@@ -1,0 +1,41 @@
+/////////////////////////////////////////////////////////////////////////////////
+//////////////////////////Password Recovery Email////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+if((isset($_GET['st']))and($_GET['st']=='ep')){
+
+$query_rs_Password="select Password from user where Email=".$_POST['Email'];
+$rs_Password = mysqli_query($connDoraTarjumaQuran, $query_rs_Password) or die(mysqli_error());
+$row_rs_Password = mysqli_fetch_assoc($rs_Password);
+$totalRows_rs_Password = mysqli_num_rows($rs_Password);
+if($totalRows_rs_Password){
+$to = $_POST['Email'];
+$subject = 'Dora Tarjuma Quran - Password Recovery';
+$headers = 'From: support@connect.net.pk\r\n';
+//$headers = 'From: ehsan@doratarjumaquran.pk\r\n';
+$headers .= 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";// To send HTML mail, the Content-type header must be set
+$message = '
+<html>
+<head><title>Dora Tarjuma Quran - Password Recovery</title></head>
+<body>
+Assalam  u alaikum<br />
+Thank You for visiting www.doratarjumaquran.pk
+Whenever we incur a loss or forget anything we should say.<br />
+"Inna lillahi wa inna ilaihi rajioon" Surely we are for Allah and we are going back to Him<br />
+Your credentials are<br />
+UserName:'.$_POST['Email'].'<br />
+Password:'.$_POST['Password'].'<br />
+Please save these credentials somewhere for future reference.<br />
+Keep visiting your own website <a href="http://www.doratarjumaquran.pk/">www.doratarjumaquran.pk</a><br />
+</body>
+</html>';
+if(mail($to,$subject,$message,$headers))$emailstatus=1;else $emailstatus=0;
+}}
+
+
+	else if ((isset($_GET['st']))and($_GET['st']=='ep')){
+	if($emailstatus)
+	echo 'Your password has been emailed to you. If you don\'t find the email, check in the spam or please wait as it may take some time. If you don\'t recieve your password within 24 hours, send us an email at nazim@doratarjumaquran.pk with subject "Password Recovery" from the email address you registered.<br />';
+	else echo 'Server seems to be busy at the moment, Please try later';
+	}

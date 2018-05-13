@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_UserId" value="name:newuserid;datatype:int" />
+	<infoitem key="UD_rs_MaqamiTanzeem" value="name:MaqamiTanzeemId;datatype:int,name:MaqamiTanzeem;datatype:string" />
+	<infoitem key="UD_rs_Halqa" value="name:HalqaId;datatype:int,name:Halqa;datatype:string" />
+	<infoitem key="UD_rs_Tanzeem" value="name:MaqamiTanzeemId;datatype:int,name:tanzeem;datatype:string" />
+	<infoitem key="UD_rs_MaqamiTanzeemAndHalqa" value="name:MaqamiTanzeemId;datatype:int,name:MaqamiTanzeem;datatype:string" />
+	<infoitem key="UD_rs_Prefix" value="name:Prefix;datatype:string" />
+	<infoitem key="UD_rs_Usra" value="name:UsraId;datatype:int,name:usranaqeeb;datatype:string" />
+</info>

@@ -1,0 +1,17 @@
+<select id='CityTown' name='CityTown' onchange="getScriptPage('output_div1','Year')" style="width=150">
+  <?php
+do {  
+?>
+  <option value="<?php echo $row_rs_CityTown['CityTown'];?>"
+  <?php if (!(strcmp($row_rs_CityTown['CityTown'], $citytown))) {echo "selected=\"selected\"";} ?>>
+  <?php echo $row_rs_CityTown['CityTown'];?></option>
+  <?php
+} while ($row_rs_CityTown = mysqli_fetch_assoc($rs_CityTown));
+  $rows = mysqli_num_rows($rs_CityTown);
+  if($rows > 0) {
+      mysqli_data_seek($rs_CityTown, 0);
+	  $row_rs_CityTown = mysqli_fetch_assoc($rs_CityTown);
+  }
+?>
+        
+      </select>

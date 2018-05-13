@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><meta name="keywords" content="quran qur'an koran tafseer tafsir exegesis explanation dars arabic downloads books articles quiz questions answers taraveeh taravih prayer ramzan ramadhan roza fasting islam jihad dr israr pakistan khilafat caliphate muslims tanzeem e islami nifaz e shariat islami nizam">
+<meta name="description" content="quran qur'an koran tafseer tafsir exegesis explanation dars arabic downloads books articles quiz questions answers taraveeh taravih prayer ramzan ramadhan roza fasting islam jihad dr israr pakistan khilafat caliphate muslims tanzeem e islami nifaz e shariat islami nizam">
+<title>Edit Profile</title>
+<style type="text/css">
+<!--
+.style2 {
+	color: #FF0000;
+	font-size: large;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#669933"><form method="post" name="form1" action="">
+<table width="800" border="1" align="center" cellpadding="0" bgcolor="#CCEEAA"  cellspacing="0">
+<tr><td width="694"><h1 align="center">Profile</h1></td></tr>
+<tr><td height="889" >
+  <table align="center">
+    <tr valign="baseline">
+      <td width="142" align="right" nowrap>Email:</td>
+      <td width="538"><input type="text" name="Email" value="" size="40">	  </td>
+    </tr>
+	<tr valign="baseline">
+      <td width="142" align="right" nowrap>UserName:</td>
+      <td width="538"><input type="text" name="UserName" value="" readonly="readonly" size="20">	  </td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap align="right">Password:</td>
+      <td><input type="text" name="Password" value="" size="20"></td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap align="right">FirstName:</td>
+      <td><input name="FirstName" type="text" value="" size="30" maxlength="50"> 
+      LastName
+      <input name="LastName" type="text" value="" size="30" maxlength="50" /></td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap align="right">Date Of Birth:</td>
+      <td><select name="dd">
+        <option value=""></option>
+      </select>
+        <select name="mm">
+        </select>
+        <select name="yy">
+        <option value="" ></option>
+         </select></td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap align="right">Contact (Home):</td>
+      <td><input name="HomePhone" type="text" value="" size="14" maxlength="14">
+(e.g. +92-21-2239849)</td>
+    </tr>
+	<tr valign="baseline">
+      <td nowrap align="right">Contact(Work):</td>
+      <td><input name="WorkPhone" type="text" value="" size="14" maxlength="14">
+      (e.g. +92-21-4330038)</td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap align="right">Mobile:</td>
+      <td><input name="Mobile" type="text" value="" size="15" maxlength="15">
+      (e.g. +92-334-3380785)</td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap align="right">Address(Home):</td>
+      <td><input name="HomeAddress" type="text" value="" size="50" maxlength="70"></td>
+    </tr>
+	<tr valign="baseline">
+      <td nowrap align="right">Address(Work):</td>
+      <td><input name="WorkAddress" type="text" value="" size="50" maxlength="70"></td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap align="right">Country:</td>
+      <td><select name="Country">
+        <option value="<?php echo $row_rs_Countries['CountryId']?>"></option>
+      </select></td>
+    </tr>
+	    <tr valign="baseline">
+      <td nowrap align="right">Region:</td>
+      <td><input type="text" name="Region" value="" />
+      (state, province etc)</td>
+    </tr>
+	    <tr valign="baseline">
+      <td nowrap align="right">CityTown:</td>
+      <td><input type="text" name="CityTown" value=""/></td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap align="right">Education:</td>
+      <td><input name="Education" type="text" value="" size="50" maxlength="50">
+	  (e.g Bachelor of Science (Computer Science))<br />
+      <em>Your highest degree and major subject, students may write the degree in progress.</em></td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap align="right">Profession:</td>
+      <td><input name="Profession" type="text" value="" size="50" maxlength="50">
+      (e.g Software Engineer in DevNext Solutions)<br  />
+	  <em>Your Job Title and Company Name, Business Name etc </em></td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap align="right">Detailed Note:</td>
+      <td>
+        <textarea  name="DetailedNote" cols="80" rows="10"><?php echo $row_rs_User['DetailedNote'];?></textarea><br />
+        <em>Please share with us a detailed note of your education, profession, interests, activities, your<br />
+        overall perception of life, any important events and if you are a rafeeq of Tanzeem-e-Islami,<br />
+        your experience from introduction to joining of Tanzeem and afterwards.</em></td>
+    </tr>
+		<tr valign="baseline">
+      <td nowrap align="right">&nbsp;</td>
+      <td><strong>Please provide the additional details below if you are a rafeeq of Tanzeem e Islami.</strong></td>
+    </tr>
+	<tr valign="baseline">
+      <td nowrap align="right">Joining Date</td>
+      <td><input name="JoiningDateCalender" type="radio" value="Standard" checked="checked" />Use this<select name="jdds">
+        <option value=""></option>
+            </select>
+        <select name="jmms">
+        
+?>
+        </select>
+        <select name="jyys">
+        <option value="<?php echo $year;?>" <?php if($uy2==$year)echo 'selected="selected"';?>><?php echo $year;?>		</option>
+        <?php $year--;} while ($year>1966);?>
+      </select><br  />
+        <input name="JoiningDateCalender" type="radio" value="Hijri"/>Use this<select name="jddh"><?php $date=1;do { ?>
+        <option value="<?php echo $date;?>"<?php if($ud3==$date) echo 'selected="selected"';?>><?php if($date<10)echo "0"; echo $date;?></option>
+        <?php $date++;} while ($date<31);?>
+      </select>
+        <select name="jmmh">
+          <?php
+do {  
+?>
+          <option value="<?php echo $row_rs_hijrimonths['MonthId'];?>"<?php if($um3==$row_rs_hijrimonths['MonthId'])echo 'selected="selected"';?>><?php echo $row_rs_hijrimonths['Month']?></option>
+          <?php
+} while ($row_rs_hijrimonths = mysqli_fetch_assoc($rs_hijrimonths));
+  $rows = mysqli_num_rows($rs_hijrimonths);
+  if($rows > 0) {
+      mysqli_data_seek($rs_hijrimonths, 0);
+	  $row_rs_hijrimonths = mysqli_fetch_assoc($rs_hijrimonths);
+  }
+?>
+        </select>
+        <select name="jyyh"><?php $year=1428;do { ?>
+        <option value="<?php echo $year;?>" <?php if($uy3==$year)echo 'selected="selected"';?>><?php echo $year;?>		</option>
+        <?php $year--;} while ($year>1386);?>
+      </select><br  />Select date=1 and month=January/Muharram in case you dont remember any of them exactly.</td>
+    </tr>
+	<tr valign="baseline">
+      <td nowrap valign="top" align="right">Current Responsibilities<br  />in Tanzeem(if any)</td>
+      <td><textarea name="CurrentResponsibilities" cols="70"><?php echo $row_rs_User['CurrentResponsibilities'];?></textarea></td>
+    </tr><tr valign="baseline">
+      <td nowrap align="right">Halqa:</td>
+      <td><select id='HalqaId' name='HalqaId' onchange = getScriptPage('h')>
+        <?php
+do {  
+?><option value="<?php echo $row_rs_Halqa['HalqaId']?>"<?php if ($row_rs_Halqa['HalqaId']==$row_rs_User['HalqaId']) {echo "selected=\"selected\"";} ?>><?php echo $row_rs_Halqa['Halqa']?></option>
+          <?php
+} while ($row_rs_Halqa = mysqli_fetch_assoc($rs_Halqa));
+  $rows = mysqli_num_rows($rs_Halqa);
+  if($rows > 0) {
+      mysqli_data_seek($rs_Halqa, 0);
+	  $row_rs_Halqa = mysqli_fetch_assoc($rs_Halqa);
+  }
+?>
+      </select></td>
+	</tr>
+	<tr valign="baseline">
+      <td width="111" align="right" nowrap>Maqami Tanzeem:</td>
+      <td width="590"><input type="text" name="NewMaqamiTanzeem" /></td>
+	</tr>
+	<tr valign="baseline">
+      <td nowrap align="right">Usra:</td>
+      <td><input type="text" name="NewUsra" /></td>
+	</tr>
+	</table>
+  </div>
+</td></tr>
+<tr><td align="center"><input type="submit" value="Save Profile"></td>
+</tr></table>
+</form>
+</body>
+<?php include("footer.php"); ?>
+</html>
+<?php
+mysqli_free_result($rs_Prefix);
+mysqli_free_result($rs_MaqamiTanzeem);
+mysqli_free_result($rs_Halqa);
+mysqli_free_result($rs_Usra);
+mysqli_free_result($rs_Months);
+mysqli_free_result($rs_hijrimonths);
+
+mysqli_free_result($rs_Countries);
+mysqli_free_result($rs_User);
+?>

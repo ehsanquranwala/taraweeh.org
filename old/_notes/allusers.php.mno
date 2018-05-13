@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_Speaker" value="name:UserId;datatype:int,name:FullName;datatype:string,name:age;datatype:int,name:Education;datatype:string,name:Profession;datatype:string,name:CityTown;datatype:string" />
+</info>

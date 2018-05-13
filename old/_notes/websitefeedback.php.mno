@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_dfd" value="name:UserId;datatype:int" />
+	<infoitem key="UD_rs_DateTime" value="name:datetime;datatype:time" />
+	<infoitem key="UD_rs_View" value="name:newviewid;datatype:int" />
+	<infoitem key="UD_rs_WebsiteFeedback" value="name:NewWebsiteFeedbackId;datatype:int" />
+</info>

@@ -1,0 +1,18 @@
+/* ================================
+    CSS STYLES FOR Module DNN.Announcements
+   ================================
+*/
+.DNN_ANN_DesignTable
+{
+	width:100%;
+	padding:4px;
+}
+
+.DNN_ANN_Description
+{
+}
+
+.DNN_ANN_Description P
+{
+	margin-top:0px;
+}

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_ProgramType" value="name:ProgramTypeId;datatype:int,name:ProgramType;datatype:string" />
+	<infoitem key="UD_rs_Language" value="name:LanguageId;datatype:int,name:Language;datatype:string" />
+	<infoitem key="UD_rs_Program" value="name:newprogramid;datatype:int" />
+	<infoitem key="UD_rs_Country" value="name:Country;datatype:string" />
+	<infoitem key="UD_rs_City" value="name:CityTown;datatype:string" />
+	<infoitem key="UD_Recordset1" value="name:CityTown;datatype:string" />
+	<infoitem key="UD_rs_Region" value="name:Region;datatype:string" />
+	<infoitem key="UD_rs_Place" value="name:PlaceId;datatype:int,name:Address;datatype:string" />
+	<infoitem key="UD_rs_CityTown" value="name:CityTown;datatype:string" />
+	<infoitem key="UD_rs_Address" value="name:Address;datatype:string" />
+	<infoitem key="UD_rs_Year" value="name:Year;datatype:real" />
+	<infoitem key="UD_rs_Speakers" value="name:UserId;datatype:int,name:Speaker;datatype:string" />
+	<infoitem key="UD_rs_Users" value="name:UserId;datatype:int,name:Speaker;datatype:string" />
+	<infoitem key="UD_rs_Huffaz" value="name:UserId;datatype:int,name:FullName;datatype:string" />
+	<infoitem key="UD_rs_Management" value="name:UserId;datatype:int,name:FullName;datatype:string" />
+</info>

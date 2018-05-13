@@ -1,0 +1,15 @@
+#interContainer {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 15px; BORDER-TOP: black 1px solid; PADDING-LEFT: 15px; Z-INDEX: 6; LEFT: 0px; VISIBILITY: hidden; PADDING-BOTTOM: 15px; BORDER-LEFT: black 1px solid; WIDTH: 425px; PADDING-TOP: 0px; BORDER-BOTTOM: black 1px solid; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #ff9600
+}
+#interContainer .headerbar {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; COLOR: gray; PADDING-TOP: 5px; TEXT-ALIGN: right
+}
+#interContainer .headerbar A {
+	FONT-SIZE: 120%; TEXT-DECORATION: none
+}
+#interContent {
+	BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid; BACKGROUND-COLOR: white
+}
+#interVeil {
+	Z-INDEX: 5; RIGHT: 0px; BACKGROUND: url(img/blackdot.gif) black; FILTER: progid:DXImageTransform.Microsoft.alpha(opacity=80); VISIBILITY: hidden; WIDTH: 10px; POSITION: absolute; TOP: 0px; opacity: 0.8
+}

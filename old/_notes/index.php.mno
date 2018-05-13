@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_Views" value="name:ViewId;datatype:int,name:ViewSummary;datatype:string,name:FullName;datatype:string" />
+	<infoitem key="UD_rs_Place" value="name:Address;datatype:string" />
+	<infoitem key="UD_rs_PlaceHistory" value="name:Year;datatype:year,name:FullName;datatype:string,name:ProgramType;datatype:string" />
+	<infoitem key="UD_rs_SpeakerProfile" value="name:UserId;datatype:int,name:Email;datatype:string,name:Password;datatype:string,name:FullName;datatype:string,name:Gender;datatype:string,name:DateOfBirth;datatype:date,name:HomePhone;datatype:string,name:OfficePhone;datatype:string,name:Mobile;datatype:string,name:Address;datatype:string,name:CityTown;datatype:string,name:Region;datatype:string,name:Country;datatype:string,name:Education;datatype:string,name:Profession;datatype:string,name:Details;datatype:blob,name:Halqa;datatype:string,name:MaqamiTanzeem;datatype:string,name:Mutarjim;datatype:int,name:Hafiz;datatype:int,name:Nazim;datatype:int,name:NazimeMaktaba;datatype:int,name:Muawin;datatype:int" />
+	<infoitem key="UD_rs_YearlyDetails" value="name:CityTown;datatype:string,name:count(programid);datatype:int" />
+	<infoitem key="UD_rs_PlaceDetails" value="name:Year;datatype:year,name:FullName;datatype:string,name:ProgramType;datatype:string" />
+	<infoitem key="UD_rs_Speaker" value="name:UserId;datatype:int,name:FullName;datatype:string,name:age;datatype:int,name:Education;datatype:string,name:Profession;datatype:string,name:CityTown;datatype:string" />
+	<infoitem key="UD_rs_Ramzan" value="name:daysleftinramzan;datatype:int" />
+</info>

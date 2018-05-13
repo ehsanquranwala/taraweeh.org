@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_Views" value="name:FullName;datatype:string,name:OneSentenceView;datatype:string,name:CompleteExperience;datatype:blob" />
+</info>

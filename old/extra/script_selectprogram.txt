@@ -1,0 +1,11 @@
+	$query1="Select distinct(Country) from program pr join place pl Where Country!='Other' and pr.PlaceId = pl.PlaceId and pr.HijriYear=".$SelectedYear;
+	$res1=$ds->get_array($query1);
+	if(!strcmp($ChangedEntry,'yr'))$SelectedCountry=$res1[0];
+	$query2="Select distinct(Region) from program pr join place pl Where Region!='Other' and pr.PlaceId = pl.PlaceId and pr.HijriYear=".$SelectedYear." and pl.Country='".$SelectedCountry."'";
+	$res2=$ds->get_array($query2);
+	if((!strcmp($ChangedEntry,'yr'))or(!strcmp($ChangedEntry,'cn')))$SelectedRegion=$res2[0];
+	$query3="Select distinct(pl.CityTown) from program pr join place pl Where CityTown!='Other' and pr.PlaceId = pl.PlaceId and pr.HijriYear = ".$SelectedYear." and pl.Country='".$SelectedCountry."' and pl.Region='".$SelectedRegion."' order by pl.CityTown";
+	$res3=$ds->get_array($query3);
+	if((!strcmp($ChangedEntry,'yr'))or(!strcmp($ChangedEntry,'cn'))or(!strcmp($ChangedEntry,'re')))$SelectedCityTown=$res3[0];
+	$query4="SELECT pr.ProgramId, pl.Address FROM place pl join program pr WHERE pl.PlaceId=pr.PlaceId and pr.HijriYear=".$SelectedYear." and pl.Country='".$SelectedCountry."' and pl.Region='".$SelectedRegion."' and pl.CityTown='".$SelectedCityTown."' order by pl.Address";
+	$res4=$ds->get_values($query4);	

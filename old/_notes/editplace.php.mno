@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rs_Location" value="name:Country;datatype:string,name:Region;datatype:string,name:CityTown;datatype:string,name:Address;datatype:string" />
+	<infoitem key="UD_rs_Country" value="name:Country;datatype:string" />
+	<infoitem key="UD_rs_Type" value="name:Type;datatype:string" />
+	<infoitem key="UD_rs_PlaceType" value="name:PlaceType;datatype:string" />
+	<infoitem key="UD_rs_Place" value="name:PlaceId;datatype:int,name:Address;datatype:string" />
+</info>
