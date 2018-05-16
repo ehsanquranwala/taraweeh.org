@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en-US" data-ng-app="myapp">
+
+
+<head>
+<title>Tarjume Wali Taraweeh</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:url"           content="http://taraweeh.org" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Tarjume Wali Taraweeh" />
+    <meta property="og:description"   content="Taraweeh programs where translation and tafsir of Quran is presented during breaks" />
+    <meta property="og:image"         content="http://taraweeh.org/taraweeh.org.jpg" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--link rel="stylesheet" href="https://lipis.github.io/bootstrap-social/bootstrap-social.css"-->
+<link rel="stylesheet" href="https://lipis.github.io/bootstrap-social/assets/css/font-awesome.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
+<style>
+    .no-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .arrow-down:after,.arrow-up:after{
+        content: ' ';
+        position: relative;
+        left: 2px;
+        border: 8px solid transparent;
+    }
+
+    .arrow-down:after{
+        top: 10px;
+        border-top-color: black;
+    }
+
+    .arrow-up:after{
+        bottom: 15px;
+        border-bottom-color: black;
+    }
+
+    .arrow-down,.arrow-up{
+        padding-right: 10px;
+    }
+
+    .table-condensed>tbody>tr>td, .table-condensed>tbody>tr>th,
+    .table-condensed>tfoot>tr>td, .table-condensed>tfoot>tr>th,
+    .table-condensed>thead>tr>td, .table-condensed>thead>tr>th{
+        padding: 15px;
+    }
+
+    #extraInfo {
+        background: #fff;
+    }
+
+    #extraInfo td {
+        padding: 18px;
+    }
+
+    .table>tbody+tbody {
+        border: 2px solid #393027;
+    }
+
+    .table-responsive{
+        margin-top: 25px;
+    }
+
+    .top_content h1, .top_content h3, .top_content p{
+        text-align: center;
+    }
+
+    body{
+        font-family: 'Raleway', sans-serif;
+        background: url(images/patteren-lighten.jpg) repeat;
+        color: #000
+    }
+
+    .glyphicon{
+        margin-right: 6px;
+    }
+
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+        vertical-align: middle;
+    }
+
+    p{
+        font-size: 16px;
+    }
+
+    span.txt{
+        color: #015b86;
+        font-weight: bold;
+    }
+
+    .btn{
+        margin-bottom: 10px;
+    }
+
+
+    .top_content{/*background: url("images/texture.jpg") repeat;*/ width: 100%; color: #000}
+
+    .top_content .btn{
+        font-size: 12px;
+    }
+    .top_content .btn2{
+        font-size: 15px;
+    }.top_content .btn3{
+        font-size: 15px;
+        background: #1dcaff; border: 1px solid #1dcaff;
+    }.top_content .btn4{
+        font-size: 15px;
+        background: #000;border: 1px solid #000;
+    }
+    i.fa{
+        font-size: 20px;
+    }
+
+    th{
+        font-size: 17px;
+    }
+
+    table thead{
+        font-size: 24px;
+        padding: 22px 60px 20px 25px;
+        line-height: 24px;
+        margin: 0;
+        color: #fff;
+        position: relative;
+        background: url(images/talash-pattren.jpg) repeat;
+    }
+
+    table tbody{
+        background: #fff;
+        font-size: 15px;
+    }
+</style>
+</head>
+
+
+<body>
+<div data-ng-controller="IndexController">
+
+    <div class="top_content">
+        <div class="container-fluid">
+            <h1>Ramadan 2018 Taraweeh And Dora e Quran Programs</h1>
+            <h3>Tarjuma / Tafsir  / Khulasa / Dars e Quran Programs by Different Organizations</h3>
+            <p>Mostly held with Taraweeh, Dora e Quran programs are the most effective and practical way to go through complete Quran in just 1 month</p>
+            <br>
+            <p>With some extra effort, make it the best Ramadan of your life. Please share this website on facebook, twitter etc with <u>#TarjumeWaliTaraweeh</u></p>
+            <p>And if you know any other Quranic programs, please send their details at <i>taraweeh.org@gmail.com</i> or contact us at <i>0311-3030393</i></p>
+            <p><u>Click on a row in the table to see program details</u>&nbsp; | &nbsp;<u>Click on any heading to arrange the list by it</u>&nbsp; | &nbsp;<u>Use different search criteria for finding programs</u></p>
+        </div>
+    </div>
+
+
+<div class="container-fluid">
+
+<table class="table table-hover table-condensed table-responsive">
+    <thead>
+    <tr>
+        <th title="Randomize Order" ng-click='sortColumn("ord")'><span class="glyphicon glyphicon-random"/></th>
+        <th title="Arrange by City" ng-click='sortColumn("ct")' ng-class='sortClass("ct")'>City</th>
+        <th title="Arrange by Area" ng-click='sortColumn("ar")' ng-class='sortClass("ar")'>Area</th>
+        <th title="Arrange by Venue" ng-click='sortColumn("pl")' ng-class='sortClass("pl")' class="hidden-xs">Venue</th>
+        <th title="Arrange by Program Type" ng-click='sortColumn("prt")' ng-class='sortClass("prt")' class="hidden-xs">Type</th>
+        <th title="Arrange by For" ng-click='sortColumn("prg")' ng-class='sortClass("prg")' class="hidden-xs">For</th>
+        <th title="Arrange by Speaker" ng-click='sortColumn("sp")' ng-class='sortClass("sp")'>Respected Speakers</th>
+        <th title="Arrange by Contact" ng-click='sortColumn("ph1")' ng-class='sortClass("ph1")' class="hidden-xs">Contact</th>
+        <th title="Arrange by Organization" ng-click='sortColumn("or")' ng-class='sortClass("or")' class="hidden-xs">Organized By</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td title="Expand/Collapse"></td>
+        <td title="Search by City"><input type="text" ng-model="search_city" class="form-control"></td>
+        <td title="Search by Area"><input type="text" ng-model="search_area" class="form-control"></td>
+        <td title="Search by Address" class="hidden-xs"><input type="text" ng-model="search_address" class="form-control"></td>
+        <td title="Search by Program Type" class="hidden-xs">
+            <select ng-model="search_type" class="form-control">
+                <option ng-repeat="t in program_types_short_arr">{{t}}</option></select>
+        </td>
+        <td title="Search by City" class="hidden-xs">
+            <select ng-model="search_for" class="form-control">
+                <option ng-repeat="t in program_for_arr">{{t}}</option></select>
+        </td>
+        <td title="Search by Speaker"><input type="text" ng-model="search_speaker" class="form-control"></td>
+        <td title="Search by Phone" class="hidden-xs"><input type="text" ng-model="search_phone" class="form-control"></td>
+        <td title="Search by Organization" class="hidden-xs">
+            <select ng-model="search_organizer" class="form-control">
+            <option ng-repeat="o in organizers">{{o}}</option></select>
+        </td>
+    </tr>
+    </tbody>
+    <tbody ng-repeat="p in khiprograms | filter:search | orderBy:column:reverse">
+    <!--tbody ng-repeat="p in khiprograms"-->
+    <tr title="Click to show or hide program details" ng-click="toggleRow($index); toggle[$index] =!toggle[$index]">
+        <td width='3%'>
+            <a ng-init="toggle[$index] = false">
+                <span class="glyphicon glyphicon-plus" ng-if="!toggle[$index]"></span>
+                <span class="glyphicon glyphicon-minus" ng-if="toggle[$index]"></span>
+            </a>
+        </td>
+        <td width='10%'>{{p.ct}}</td>
+        <td width='13%'>{{p.ar}}</td>
+        <td width='18%' class="hidden-xs">{{p.pl}}</td>
+        <td width='7%' class="hidden-xs">{{program_type_short(p.prt)}}</td>
+        <td width='7%' class="hidden-xs">{{program_for_arr[p.prg]}}</td>
+        <td width='16%'>{{p.sp}}</td>
+        <td width='10%' class="hidden-xs">{{p.ph1}}</td>
+        <td width='16%' class="hidden-xs">{{p.or}}</td>
+    </tr>
+    <tr ng-if="toggle[$index]" id="extraInfo">
+        <td colspan="9">
+            <div style="margin-left: 30px">
+                <p><span class="txt">Program:</span> <b>{{get_program_type(p.prt,p.ori)}}</b></p>
+                <p><span class="txt">Address:</span> <b>{{p.ad}}, {{p.ct}}</b></p>
+                <p><span class="txt">Speaker:</span> <b>{{p.sp}}</b></p>
+                <p><span class="txt">Contact:</span> <b>{{p.ph1}} , {{p.ph2}}</b></p>
+                <p><span class="txt">From:</span> <b>{{p.prst}}</b> To {{p.pred}}</p>
+                <p><span class="txt">Timing:</span> <b>{{p.prtm}}</b></p>
+                <p><span class="txt">Arrangements For:</span> <b>{{get_program_for(p.prg)}}</b></p>
+                <div style="white-space:pre-wrap;"><p><span class="txt">Description:</span> {{program_description(p.prt,'English',p.ori)}}<br>{{program_description(p.prt,'Urdu',p.ori)}}</p></div>
+                <br>
+                <p ng-if="p.ori=='1'"><span class="txt">Usual Format:</span> {{program_format(p.prt,'English')}}</p>
+                <p><span class="txt">Organized By:</span> <b>{{p.or}}</b></p>
+                <p><span class="txt">Official Website:</span> <a target="_blank" href="http://{{official_websites[p.ori]}}">{{official_websites[p.ori]}}</a></p>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+    <div class="top_content">
+        <div class="container-fluid">
+            <p><u>Strict Search:</u> Enter a <b>single</b> Search Field and any option other than "All" from dropdowns to find programs matching <b>specific</b> search fields only</p>
+            <p><u>Flexible Search:</u> Enter <b>multiple</b> Search Fields and any option from dropdowns to find programs matching <b>any</b> of the search fields</u></p>
+        </div></div>
+</div>
+</div>
+<script>
+angular.module('myapp',[]);
+
+angular.module('myapp').controller('IndexController', function($scope, $http) {
+
+$scope.column = 'ord';// column to sort
+$scope.reverse = false;//Set true for desending
+$scope.search_city = '';
+$scope.search_area = '';
+$scope.search_speaker = '';
+$scope.search_address = '';
+$scope.search_phone = '';
+$scope.search_type = 'All';
+$scope.search_for = 'All';
+$scope.search_organizer = 'All';
+$scope.organizers = ['All','Tanzeem e Islami','Al-Quran Courses','Role Model Institute','Burooj Institute'];
+$scope.program_types = ['','Dora Tarjuma Quran (دورہ ترجمہ قرآن)','Khulasa Mazameen Quran (خلاصہ مضامین قرآن)'];
+$scope.official_websites = {'1':'Tanzeem.Org','2':'facebook.com/AQCNP','3':'RoleModel.Pk','4':'BuroojInstitute.Org'};
+$scope.program_types_short_arr = ['All','Dora','Khulasa','Misc'];
+$scope.program_for_arr = ['All','Both','Men','Women'];
+$scope.program_types_short_dict = {'0':'All','1':'Dora','2':'Khulasa'};
+$scope.language = 'English';//Urdu
+
+    $scope.toggleRow = function(index){
+        toggle[index] =!toggle[index];
+    };
+    $scope.remove_dash = function(numstr){
+        var res = numstr.replace("-", "");
+        return res;
+    };
+
+    $scope.program_type_short = function (type) {
+        var description = '';
+        if(type=='1')
+            description = 'Dora';
+        else if(type=='2')
+            description = 'Khulasa';
+        else
+            description = 'Misc';
+        return description;
+    }
+
+$scope.get_program_type = function(type,org){
+    var description = '';
+    switch (type) {
+        case '1':
+            description = 'Dora Tarjuma Quran (دورہ ترجمہ قرآن)';
+            break;
+        case '2':
+            if (org == '1')
+                description = 'Khulasa Mazameen Quran (خلاصہ مضامین قرآن)';
+            else if (org == '2')
+                description = 'Khulasa Tafseer Quran (خلاصہ تفسیر قرآن)';
+            break;
+        case '4':
+            description = 'Ramadan Nights (Taraweeh, Talk and Doodh Patti)';
+            break;
+        case '5':
+            description = 'Quran Ilm-o-Amal Mein (Lecture Series, 8 Sessions, 3 Speakers)';
+            break;
+
+    }
+    return description;
+};
+
+$scope.program_description = function(type,language,org){
+    debugger;
+  var description = '';
+  switch (type) {
+      case '1':
+          if (org == '1') {
+              if (language == 'Urdu')
+                  description = 'اس پروگرام میں ایک ایک آیت کا ترجمہ و تشریح تراویح کے دوران عمومًا تین وقفوں میں بیان کیا جاتا ہے';
+              else
+                  description = 'In this program an Ayah by Ayah translation and brief explanation is presented during Taraweeh breaks usually in 3 sessions.';
+          }
+          else if (org == '3' || org == '4') {
+              if (language == 'Urdu')
+                  description = 'اس پروگرام میں ایک ایک آیت کا ترجمہ و تشریح بیان کیا جاتا ہے';
+              else
+                  description = 'In this program an Ayah by Ayah translation and brief explanation is presented';
+                  }
+          break;
+      case '2':
+          if (org == '1') {
+          if (language == 'Urdu')
+              description = 'اس پروگرام میں قرآن کے مضامین کا خلاصہ اور اہم آیات کا ترجمہ و تشریح تراویح کے دوران عمومًا دو وقفوں میں بیان کیا جاتا ہے';
+          else
+              description = 'In this program a summary of small groups of Aayat (3, 5 or upto a Ruku) is presented with translation of only the most important Aayat usually in 2 sessions.';
+          }
+          else if (org == '2') {
+              if (language == 'Urdu')
+                  description = 'اس پروگرام میں قرآن کی تفسیر کا خلاصہ بیان کیا جاتا ہے';
+              else
+                  description = 'In this program a summary of Quran\'s Tafseer is presented';
+          }
+          break;
+      case '3':
+          description = 'In this program a summary of groups of Aayat (usually a Ruku) is presented with translation of only the most important Aayat in 1 session.';
+          break;
+      case '4':
+          if (language == 'Urdu')
+              description = '';
+          else
+              description = 'Taraweeh by Qari Habib Ullah\nMake your Ramadan Nights memorable by lightening up your eeman with the recitation of the Quran\n' +
+                  'Burooj Institute brings to you a special Taraweeh program. Listen to the captivating and soothing recitation of the Quran. Followed by brief dars.\n' +
+                  'That\'s not all, we\'ve also made arrangements for Doodh Patti prepared live on the spot!';
+          break;
+      case '5':
+          if (language == 'Urdu')
+              description = '';
+          else
+              description = 'Series of 8 Unique Sessions Throughout Ramadan\nWith Practical Assignments For Every Session To Become A Better Person\n3 Different Speakers Covering Various Quranic Passages';
+          break;
+  }
+  return description;
+};
+
+$scope.get_program_for = function(prfor) {
+    var description = '';
+    if(prfor=='1')
+        description = 'Men and Women';
+    if(prfor=='2')
+        description = 'Men Only';
+    if(prfor=='3')
+        description = 'Women Only';
+    return description;
+};
+
+$scope.program_format = function(type,language){
+    var description = '';
+    switch (type){
+        case '1':
+            if (language == 'Urdu')
+                description = '';
+            else
+                description = 'Isha (Jamaat), Sunan, 1st session, 4 Rakaat Taraweeh, 2nd Session, 8 Rakaat Taraweeh, Refreshments Break, 3rd Session, 8 Rakaat Taraweeh and Witr';
+            break;
+        case '2':
+            if (language == 'Urdu')
+                description = '';
+            else
+                description = 'Isha (Jamaat), Sunan, 1st session, 12 Rakaat Taraweeh, Refreshments Break, 2nd Session, 8 Rakaat Taraweeh and Witr';
+            break;
+        case '3':
+            description = 'Isha (Jamaat), 20 Rakaat Taraweeh and Witr, Refreshments Break, Khulasa Session. Some people join after offering Taraweeh eleswhere also';
+            break;
+    }
+    return description;
+};
+
+$scope.search = function (row) {
+    var check = (
+            (row.ct.toLowerCase().indexOf($scope.search_city.toLowerCase()) > -1 && $scope.search_city != '')
+        || (row.ar.toLowerCase().indexOf($scope.search_area.toLowerCase()) > -1 && $scope.search_area != '')
+        || (row.sp.toLowerCase().indexOf($scope.search_speaker.toLowerCase()) > -1 && $scope.search_speaker != '')
+        || ($scope.organizers[row.ori] == $scope.search_organizer && $scope.search_organizer != 'All')
+        || (row.ad.toLowerCase().indexOf($scope.search_address.toLowerCase()) > -1 && $scope.search_address != '')
+        || ((row.ph1.indexOf($scope.search_phone) > -1 || row.ph2.indexOf($scope.search_phone) > -1) && $scope.search_phone != '')
+        || ($scope.program_type_short(row.prt) == $scope.search_type && $scope.search_type != 'All')
+        || ($scope.program_for_arr[row.prg] == $scope.search_for && $scope.search_for != 'All')
+        || ($scope.program_for_arr[row.prg] == $scope.search_for && $scope.search_for != 'All')
+        || ($scope.search_city == '' &&
+            $scope.search_area.trim() == '' &&
+            $scope.search_address.trim() == '' &&
+            $scope.search_type.trim() == 'All' &&
+            $scope.search_for.trim() == 'All' &&
+            $scope.search_speaker.trim() == '' &&
+            $scope.search_phone.trim() == '') &&
+            $scope.search_organizer.trim() == 'All'
+        );
+    // debugger;
+    return check;
+};
+
+function randomize(){
+    var i;
+    for (i = 4; i < $scope.khiprograms.length; i++) {
+        var x = Math.floor((Math.random() * 100) + 5);
+        $scope.khiprograms[i]['ord'] = x;
+    }
+}
+// called on header click
+$scope.sortColumn = function(col){
+    if(col=='ord')
+        randomize();
+    $scope.column = col;
+    if(col!='ord') {
+        if ($scope.reverse) {
+            $scope.reverse = false;
+            $scope.reverseclass = 'arrow-up';
+        } else {
+            $scope.reverse = true;
+            $scope.reverseclass = 'arrow-down';
+        }
+    }
+};
+
+// remove and change class
+$scope.sortClass = function(col){
+    if($scope.column == col ){
+        if($scope.reverse){
+            return 'arrow-down';
+        }else{
+            return 'arrow-up';
+        }
+    }else{
+        return '';
+    }
+}
+
+$scope.khiprograms = [
+    { 'ord':1, 'pri':'12', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'102', 'pl':'Masjid Jame-ul-Quran', 'ad':'Masjid Jame-ul-Quran (Quran Academy), Street 34, Khayaban-e-Rahat (Darakhshan), Phase 6 DHA', 'ai':'', 'ar':'Defence', 'ct':'Karachi', 'rg':'Sindh', 'pti':'1', 'pt':'Masjid', 'spi':'73', 'sp':'Engr Noman Akhtar', 'ph1':'0333-3391020', 'ph2':'0324-2112030', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':2, 'pri':'10001', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'10:00 AM to 12:00 PM', 'pli':'2001', 'pl':'AQC Center Bahadurabad', 'ad':'Al-Quran Courses Center, Opposite Shaheen Park, Near Tooso Snacks, Bahadurabad Chorangi', 'ai':'', 'ar':'PECHS', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0336-2313665', 'ph2':'0321-2299651', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':3, 'pri':'10016', 'prt':'1', 'prg':'1', 'prst':'5 May', 'pred':'29 Ramadan', 'prtm':'Shaban 5:30 PM to 8:30 PM, Ramadan 3:30 PM to 5:30 PM', 'pli':'2016', 'pl':'Role Model Institute', 'ad':'Role Model Institute, Plot No 38-Y, Block 6 PECHS, Near Union Club', 'ai':'', 'ar':'PECHS', 'ct':'Karachi', 'rg':'Sindh', 'pti':'16', 'pt':'Institute', 'spi':'620', 'sp':'Engr Usman Ali', 'ph1':'0332-9757544', 'ph2':'021-34545836', 'ori':'3', 'or':'Role Model Institute' },
+    { 'ord':4, 'pri':'10017', 'prt':'4', 'prg':'1', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'09:00 PM to 10:50 PM', 'pli':'2017', 'pl':'Burooj Institute KAECHS', 'ad':'Burooj Institute, House No D-28, Block 1, KAECHS, Near Green Flag School, Baloch Colony Moin-ud-Din Road', 'ai':'', 'ar':'KAECHS', 'ct':'Karachi', 'rg':'Sindh', 'pti':'16', 'pt':'Institute', 'spi':'1001', 'sp':'Taha Pasha', 'ph1':'0336-3199589', 'ph2':'', 'ori':'4', 'or':'Burooj Institute' },
+    { 'ord':5, 'pri':'20', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'170', 'pl':'Quran Markaz Landhi', 'ad':'Quran Markaz Landhi, Plot No 861, Near Rizwan Sweets, Sector 37-D, Landhi 2', 'ai':'', 'ar':'Landhi', 'ct':'Karachi', 'rg':'Sindh', 'pti':'2', 'pt':'Quran Academy', 'spi':'93', 'sp':'Hafiz Engr Umair Anwar', 'ph1':'0321-3580365', 'ph2':'021-34306041', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':6, 'pri':'14', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'107', 'pl':'Quran Academy Korangi', 'ad':'Quran Academy Korangi, Adjacent Jama Masjid Tayyaba, Sector 35-A, Zaman Town, Korangi No 4', 'ai':'', 'ar':'Korangi', 'ct':'Karachi', 'rg':'Sindh', 'pti':'2', 'pt':'Quran Academy', 'spi':'941', 'sp':'Atif Aslam', 'ph1':'0336-2129166', 'ph2':'021-34306041', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':7, 'pri':'16', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'101', 'pl':'Gulistan-e-Anees Club', 'ad':'Gulistan-e-Anees Club, Near Hill Park Roundabout, Main Shaheed-e-Millat Road, PECHS (Society)', 'ai':'', 'ar':'PECHS', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'54', 'sp':'Amir Khan', 'ph1':'0321-9221929', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':8, 'pri':'35', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'458', 'pl':'Huma Lawn', 'ad':'Huma Lawn, Opposite Faisal Bank, Near Jang Press, I.I Chundrigar Road', 'ai':'', 'ar':'II Chundrigar Road', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'114', 'sp':'Muhammad Rizwan', 'ph1':'0333-3870773', 'ph2':'021-34306041', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':9, 'pri':'58', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'553', 'pl':'Little Master School', 'ad':'Little Master School, Asifabad, Green Town, Shah Faisal Colony', 'ai':'', 'ar':'Shah Faisal Colony', 'ct':'Karachi', 'rg':'Sindh', 'pti':'8', 'pt':'School', 'spi':'943', 'sp':'Aziz Zafar Siddiqui', 'ph1':'0302-2272390', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':10, 'pri':'615', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'654', 'pl':'CMA Community Center', 'ad':'CMA Community Center, Near Comprehensive School Chorangi, FB Area', 'ai':'', 'ar':'FB Area', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'49', 'sp':'Shujauddin Sheikh', 'ph1':'0321-2051847', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':11, 'pri':'603', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'642', 'pl':'Dhanak Banquet', 'ad':'Dhanak Banquet, Shah Faisal Colony No 2, Near Jamia Hammadia', 'ai':'', 'ar':'Shah Faisal Colony', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'69', 'sp':'Kafeel Ahmed Hashmi', 'ph1':'0320-2392278', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':12, 'pri':'601', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'640', 'pl':'Raj Mehel Lawn', 'ad':'Raj Mehel Lawn, Beside Chiniot Hospital, Korangi No 2 1/2', 'ai':'', 'ar':'Korangi', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'72', 'sp':'Muhammad Noman', 'ph1':'0300-2725894', 'ph2':'021-34306041', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':13, 'pri':'599', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'638', 'pl':'Plot No 10C', 'ad':'Plot No 10C, 13th Commercial Street, Phase 2 (extension), DHA', 'ai':'', 'ar':'Defence', 'ct':'Karachi', 'rg':'Sindh', 'pti':'14', 'pt':'Other', 'spi':'77', 'sp':'Dr Muhammad Ilyas', 'ph1':'021-35380450', 'ph2':'021-34306041', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':14, 'pri':'616', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'655', 'pl':'Shadi Darbar Lawn', 'ad':'Shadi Darbar Lawn, Opposite Govt Girls School, 13-D Road, Saeedabad, Baldia Town', 'ai':'', 'ar':'Baldia Town', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'91', 'sp':'Naveed Muzammil', 'ph1':'0333-2114176', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':15, 'pri':'600', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'639', 'pl':'Prince Lawn', 'ad':'Prince Lawn, Near VIP Garden, Lukhnow Society, Main Korangi Road, Korangi Crossing', 'ai':'', 'ar':'Korangi', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'94', 'sp':'Muhammad Hashim', 'ph1':'0321-2936113', 'ph2':'021-34306041', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':16, 'pri':'609', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'648', 'pl':'Ar Rahman Banquet', 'ad':'Ar Rahman Banquet, Block 3, Gulistan-e-Johar, On Road from Munawwar Chorangi to Continental Bakery', 'ai':'', 'ar':'Gulistan-e-Johar', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'168', 'sp':'Syed Saleemuddin', 'ph1':'0321-3899909', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':17, 'pri':'604', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'643', 'pl':'Lavish Banquet', 'ad':'Lavish Banquet, Near Ameen Masjid, Model Morr, Model Colony, Malir', 'ai':'', 'ar':'Malir', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'620', 'sp':'Engr Usman Ali', 'ph1':'0345-6127748', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':18, 'pri':'606', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'645', 'pl':'PIAM Banquet', 'ad':'PIAM Banquet, Beside Planitarium, Near Expo Center, Hasan Square Gulshan-e-Iqbal', 'ai':'', 'ar':'Gulshan-e-Iqbal', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'624', 'sp':'Dr Syed Saadullah', 'ph1':'0301-8224170', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':19, 'pri':'605', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'644', 'pl':'City Lawn', 'ad':'City Lawn, Block No 2, Gulshan e Iqbal Block 13 D', 'ai':'', 'ar':'Gulshan-e-Iqbal', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'925', 'sp':'Hafiz Muhammad Waqar', 'ph1':'0300-2288327', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':20, 'pri':'612', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'651', 'pl':'Mehendi Lawn', 'ad':'Mehendi Lawn, Sector 11 L, Opposite New Karachi Police Station, New Karachi', 'ai':'', 'ar':'New Karachi', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'927', 'sp':'Hafiz Osama Ali', 'ph1':'0312-0293782', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':21, 'pri':'610', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'649', 'pl':'KASA Marriage Lawn', 'ad':'KASA Marriage Lawn, KESC Employees Society, Near Rim Jhim Tower, Safoora Chorangi', 'ai':'', 'ar':'Gulistan-e-Johar', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'935', 'sp':'Rashid Hussain', 'ph1':'0332-3794216', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':22, 'pri':'608', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'647', 'pl':'The Venue Banquet', 'ad':'The Venue Banquet, Rashid Minhas Road, Beside Askari 4, Opposite Gulshan-e-Jamal', 'ai':'', 'ar':'Gulshan-e-Jamal', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'945', 'sp':'Dr Anwaar Ali', 'ph1':'0321-9295691', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':23, 'pri':'613', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'652', 'pl':'White Gold Lawn', 'ad':'White Gold Lawn, Near Larosh Restaurant, Nazimabad No 4', 'ai':'', 'ar':'Nazimabad', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'948', 'sp':'Farooq Ahmed', 'ph1':'0300-8293917', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':24, 'pri':'614', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'653', 'pl':'CASEMENTO Banquet', 'ad':'CASEMENTO Banquet, Block L, North Nazimabad', 'ai':'', 'ar':'North Nazimabad', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'949', 'sp':'Imran Chapra', 'ph1':'0300-8217857', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':25, 'pri':'611', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'650', 'pl':'Arsh-e-Bareen Lawn', 'ad':'Arsh-e-Bareen Lawn, Sector 4 B, Surjani Town', 'ai':'', 'ar':'Surjani Town', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'950', 'sp':'Muhammad Arshad', 'ph1':'0336-0384171', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':26, 'pri':'602', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'641', 'pl':'Redisson Marriage Lawn', 'ad':'Redisson Marriage Lawn, Near KPT Flyover, Qayyumabad Chorangi, Near Imtiaz Supermarket', 'ai':'', 'ar':'Qayyumabad', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'957', 'sp':'Obaid Ahmed', 'ph1':'0300-2321278', 'ph2':'021-34306041', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':27, 'pri':'607', 'prt':'1', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'646', 'pl':'MCC Lawn', 'ad':'MCC Lawn, Malik Society, Near Faria Chowk, Scheme 33, Gulzar e Hijri', 'ai':'', 'ar':'Gulzar-e-Hijri', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'958', 'sp':'Osama Usmani', 'ph1':'0333-3131547', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':28, 'pri':'26', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'293', 'pl':'Jama Masjid Shadman', 'ad':'Jama Masjid Shadman, Sector 14-B, Shadman Town, Near Bufferzone', 'ai':'', 'ar':'Bufferzone', 'ct':'Karachi', 'rg':'Sindh', 'pti':'1', 'pt':'Masjid', 'spi':'954', 'sp':'Muhammad Zeeshan', 'ph1':'0320-3145062', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':29, 'pri':'19', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'106', 'pl':'Masjid Usman', 'ad':'Masjid Usman (Faran Club), Opposite Mashriq Center, Near National Stadium, Gulshan-e-Iqbal', 'ai':'', 'ar':'Gulshan-e-Iqbal', 'ct':'Karachi', 'rg':'Sindh', 'pti':'1', 'pt':'Masjid', 'spi':'961', 'sp':'Umar Inaam Jafri', 'ph1':'0321-2013951', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':30, 'pri':'150', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'570', 'pl':'Al Fatah Garden', 'ad':'Al Fatah Garden, Near Sabri Chowk, Aziz Nagar, Sector 11 1/2, Orangi Town', 'ai':'', 'ar':'Orangi Town', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'952', 'sp':'Muhammad Imran', 'ph1':'0333-2361069', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':31, 'pri':'34', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'294', 'pl':'Quran Institute Johar', 'ad':'Quran Institute Johar, Basement Salikeen Basera Appartments, Near Johar Degree College, Block 14 Gulistan e Johar', 'ai':'', 'ar':'Gulistan-e-Johar', 'ct':'Karachi', 'rg':'Sindh', 'pti':'4', 'pt':'Tanzeems Office', 'spi':'962', 'sp':'Waqas Mubeen Khan', 'ph1':'0321-3899909', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':32, 'pri':'590', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'629', 'pl':'Master Society Motors', 'ad':'Master Society Motors, Opposite Avanti Terrace, Allama Iqbal Road, Near Khalid bin Waleed Road, PECHS Block 2', 'ai':'', 'ar':'PECHS', 'ct':'Karachi', 'rg':'Sindh', 'pti':'14', 'pt':'Other', 'spi':'939', 'sp':'Abid Ali', 'ph1':'0321-2633000', 'ph2':'021-34306041', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':33, 'pri':'594', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'633', 'pl':'Anjuman Saifi Bradran Office', 'ad':'Office of Anjuman Saifi Bradran, House No A-23, Ghosia Market, Shahrah e Faisal, Between Malir 15 and Kala Board', 'ai':'', 'ar':'Malir', 'ct':'Karachi', 'rg':'Sindh', 'pti':'14', 'pt':'Other', 'spi':'947', 'sp':'Farhan Iqbal', 'ph1':'0323-2396204', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':34, 'pri':'621', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'660', 'pl':'Benchmark School', 'ad':'Benchmark School, Block 4, Gulshan-e-Iqbal, Abul Hasan Isfahani Road', 'ai':'', 'ar':'Gulshan-e-Iqbal', 'ct':'Karachi', 'rg':'Sindh', 'pti':'8', 'pt':'School', 'spi':'621', 'sp':'Engr Faisal Manzoor', 'ph1':'0333-3131547', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':35, 'pri':'626', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'665', 'pl':'Masjid Dar-us-Salam', 'ad':'Masjid Dar-us-Salam, Block 4, FB Area', 'ai':'', 'ar':'FB Area', 'ct':'Karachi', 'rg':'Sindh', 'pti':'1', 'pt':'Masjid', 'spi':'623', 'sp':'Tariq Ameer Peerzada', 'ph1':'0331-2061673', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':36, 'pri':'619', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'658', 'pl':'Shahbaz Park', 'ad':'Shahbaz Park, Behind L-4 Market, Gulshan-e-Hadeed Phase 2', 'ai':'', 'ar':'Gulshan-e-Hadeed', 'ct':'Karachi', 'rg':'Sindh', 'pti':'13', 'pt':'Outdoor', 'spi':'931', 'sp':'Muhammad Hussain', 'ph1':'0301-2899442', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':37, 'pri':'628', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'667', 'pl':'Jama Masjid Amna', 'ad':'Jama Masjid Amna, Khairabad, Main Road Gulshan-e-Bihar, Orangi Town', 'ai':'', 'ar':'Orangi Town', 'ct':'Karachi', 'rg':'Sindh', 'pti':'1', 'pt':'Masjid', 'spi':'940', 'sp':'Asif Aziz', 'ph1':'0321-2260360', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':38, 'pri':'623', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'662', 'pl':'Marhaba Banquet', 'ad':'Marhaba Banquet, Beside Imtiaz Supermarket, Nazimabad No 4', 'ai':'', 'ar':'Nazimabad', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'942', 'sp':'Azhar Riaz', 'ph1':'0301-8295783', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':39, 'pri':'625', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'664', 'pl':'Masjid Usman', 'ad':'Masjid Usman, Landi Kotal Chorangi, Rasheed Turabi Road, Block H, North Nazimabad', 'ai':'', 'ar':'North Nazimabad', 'ct':'Karachi', 'rg':'Sindh', 'pti':'1', 'pt':'Masjid', 'spi':'944', 'sp':'Bilal Mehmood', 'ph1':'0346-2771809', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':40, 'pri':'617', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'656', 'pl':'Saffron Marriage Lawn', 'ad':'Saffron Marriage Lawn, Near Gulf Shopping Center, Teen Talwar, Main Clifton Road', 'ai':'', 'ar':'Clifton', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'946', 'sp':'Engr Noman Aftab', 'ph1':'0300-2555155', 'ph2':'021-34306041', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':41, 'pri':'620', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'659', 'pl':'Jama Masjid Al Furqan', 'ad':'Jama Masjid Al Furqan, Karachi University Employees Society Scheme 33', 'ai':'', 'ar':'Gulzar-e-Hijri', 'ct':'Karachi', 'rg':'Sindh', 'pti':'1', 'pt':'Masjid', 'spi':'951', 'sp':'Muhammad Faraz Khan', 'ph1':'0333-3131547', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':42, 'pri':'624', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'663', 'pl':'Apple Banquet', 'ad':'Apple Banquet, Kosar Niazi Colony, On Main Road From Landi Kotal Chorangi to Ziauddin Hospital, Block H, North Nazimabad', 'ai':'', 'ar':'North Nazimabad', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'953', 'sp':'Mu Khurram Ahmed', 'ph1':'0334-2947142', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':43, 'pri':'622', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'661', 'pl':'Nayab Lawn', 'ad':'Nayab Lawn, Near Chawla Market, Nazimabad No 1', 'ai':'', 'ar':'Nazimabad', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'955', 'sp':'Mansoor Rufi', 'ph1':'0345-2166320', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':44, 'pri':'618', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'657', 'pl':'House in Shah Latif Town', 'ad':'House No R-543, Sector 17-A, Shah Latif Town', 'ai':'', 'ar':'Shah Latif Town', 'ct':'Karachi', 'rg':'Sindh', 'pti':'6', 'pt':'House', 'spi':'956', 'sp':'Muhammad Nasrullah', 'ph1':'0323-2396204', 'ph2':'021-34816580', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':45, 'pri':'629', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'668', 'pl':'Tabish Lawn', 'ad':'Tabish Lawn, Plot No C-7, Sector X-1, Gulshan-e-Maymar', 'ai':'', 'ar':'Gulshan-e-Maymar', 'ct':'Karachi', 'rg':'Sindh', 'pti':'3', 'pt':'Marriage Hall', 'spi':'959', 'sp':'Shehroze Bhatti', 'ph1':'0300-2024576', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':46, 'pri':'627', 'prt':'2', 'prg':'1', 'prst':'16 May', 'pred':'29 Ramadan', 'prtm':'Namaz e Isha 9:00 PM', 'pli':'666', 'pl':'House in Bufferzone', 'ad':'House No 1D-7, Sector A-16, Bufferzone', 'ai':'', 'ar':'Bufferzone', 'ct':'Karachi', 'rg':'Sindh', 'pti':'6', 'pt':'House', 'spi':'960', 'sp':'Talha Jameel', 'ph1':'0333-3599822', 'ph2':'021-36823201', 'ori':'1', 'or':'Tanzeem e Islami' },
+    { 'ord':47, 'pri':'10002', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'11:00 AM to 01:00 PM', 'pli':'2002', 'pl':'AQC Center Burns Road', 'ad':'Al-Quran Courses Center Burns Road, Mufti Mehmood Hall, Madrasa Taleem ul Quran Lil Banat, Opposite Sunehri Masjid, Street No 2, Burns Road', 'ai':'', 'ar':'Burns Road', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0336-7870836', 'ph2':'021-32631008', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':48, 'pri':'10003', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'10:00 AM to 12:00 PM', 'pli':'2003', 'pl':'AQC Center Allahwala Town', 'ad':'Al-Quran Courses Center Allahwala Town, Near Tawakkal Center, 2nd Floor, Nawab Cottage, Street No 5, Allahwala Town', 'ai':'', 'ar':'Allahwala Town', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0322-2323032', 'ph2':'0336-2313665', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':49, 'pri':'10004', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'11:00 AM to 01:00 PM', 'pli':'2004', 'pl':'AQC Center PIB Colony', 'ad':'Al-Quran Courses Center PIB Colony, House No 77, Ground Floor, Near Bus Stop, PIB Colony', 'ai':'', 'ar':'PIB Colony', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0323-2060118', 'ph2':'0336-2313665', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':50, 'pri':'10005', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'11:00 AM to 01:00 PM', 'pli':'2005', 'pl':'AQC Center Jamshed Road', 'ad':'Al-Quran Courses Center Jamshed Road, Flat No 105, 1st Floor, Puna Wala Homes, Opposite Zainab Masjid, Jamshaid Road No 2', 'ai':'', 'ar':'Jamshed Road', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0333-2148745', 'ph2':'0336-2313665', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':51, 'pri':'10006', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'10:00 AM to 12:00 PM', 'pli':'2006', 'pl':'AQC Center Shamsi Society', 'ad':'Al-Quran Courses Center Shamsi Society, House No B/20, Shamsi Society, Near Usman Masjid', 'ai':'', 'ar':'Shamsi Society', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0333-3546498', 'ph2':'0336-2313665', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':52, 'pri':'10007', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'11:00 AM to 01:00 PM', 'pli':'2007', 'pl':'AQC Center FB Area', 'ad':'Al-Quran Courses Center FB Area, House no 1553/15, Dastageer Society, FB Area', 'ai':'', 'ar':'FB Area', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0336-2313665', 'ph2':'021-36310770', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':53, 'pri':'10008', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'11:00 AM to 01:00 PM', 'pli':'2008', 'pl':'AQC Center Saddar', 'ad':'Al-Quran Courses Center, Paradise Center, Flat No 9, Block A, Paradise Center, Sarwar Shaheed Road, Sadar', 'ai':'', 'ar':'Sadar', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0321-9264965', 'ph2':'0321-2299651', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':54, 'pri':'10009', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'11:00 AM to 01:00 PM', 'pli':'2009', 'pl':'AQC Center Defence', 'ad':'Al-Quran Courses Center Defence, House No A/2, 2/4th North Street, Defense Phase 1', 'ai':'', 'ar':'Defence', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0313-8801647', 'ph2':'021-34582950', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':55, 'pri':'10010', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'09:00 AM to 11:00 AM', 'pli':'2010', 'pl':'AQC Center Naval Colony', 'ad':'Al-Quran Courses Center Naval Colony, House No 551-52, Street No 5, Gulistan Masdoor, Near Jamia Masjid Anwar ul Haq, Hub River Road, Baldia Town', 'ai':'', 'ar':'Baldia Town', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0333-2273930', 'ph2':'0321-2299651', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':56, 'pri':'10011', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'11:30 AM to 01:00 PM', 'pli':'2011', 'pl':'AQC Center Chanesar Halt', 'ad':'Al-Quran Courses Center Chanesar Halt, House No 82-E, Block 6, PECHS (Society)', 'ai':'', 'ar':'PECHS', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0321-9292851', 'ph2':'0336-2313665', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':57, 'pri':'10012', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'11:30 AM to 01:00 PM', 'pli':'2012', 'pl':'AQC Center Kharadar', 'ad':'Al-Quran Courses Center Kharadar, 2nd Floor, MashaAllah Bakery Building, Opposite Afzal Masjid, Kaghazi Bazar, Kharadar', 'ai':'', 'ar':'Kharadar', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0311-0241028', 'ph2':'0321-2299651', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':58, 'pri':'10013', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'02:00 PM to 04:00 PM', 'pli':'2013', 'pl':'AQC Center Stadium Colony', 'ad':'Al-Quran Courses Center Stadium Colony, House No 82, Street No 10, DOHS National Stadium Colony', 'ai':'', 'ar':'Stadium Colony', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0312-2277231', 'ph2':'0321-2299651', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':59, 'pri':'10014', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'02:00 PM to 04:00 PM', 'pli':'2014', 'pl':'AQC Center 4 Bagh Colony', 'ad':'Al-Quran Courses Center 4 Bagh Colony, House No C-113, Near Siddiq e Akbar Masjid, 4 Bagh Colony, PECHS (Society)', 'ai':'', 'ar':'PECHS', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0349-1947548', 'ph2':'0336-2313665', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':60, 'pri':'10015', 'prt':'2', 'prg':'3', 'prst':'1 Ramadan', 'pred':'29 Ramadan', 'prtm':'11:00 AM to 01:00 PM', 'pli':'2015', 'pl':'AQC Center GulshaneHadeed', 'ad':'Al-Quran Courses Center Gulshan e Hadeed, House No A-91, K Electric Colony, Gulshan e Hadeed Phase 1', 'ai':'', 'ar':'Gulshan e Hadeed', 'ct':'Karachi', 'rg':'Sindh', 'pti':'15', 'pt':'Center', 'spi':'1000', 'sp':'Not Known', 'ph1':'0316-0272967', 'ph2':'0321-2299651', 'ori':'2', 'or':'Al-Quran Courses' },
+    { 'ord':61, 'pri':'10018', 'prt':'1', 'prg':'1', 'prst':'30 April', 'pred':'29 Ramadan', 'prtm':'Shaban 06:00 PM to 08:30 PM, Ramadan 3:30 PM to 5:30 PM', 'pli':'2017', 'pl':'Burooj Institute KAECHS', 'ad':'Burooj Institute, House No D-28, Block 1, KAECHS, Near Green Flag School, Baloch Colony Moin-ud-Din Road', 'ai':'', 'ar':'KAECHS', 'ct':'Karachi', 'rg':'Sindh', 'pti':'16', 'pt':'Institute', 'spi':'1002', 'sp':'Shaikh Abdul Hannan Samrudi', 'ph1':'0336-3199589', 'ph2':'', 'ori':'4', 'or':'Burooj Institute' },
+    { 'ord':62, 'pri':'10019', 'prt':'5', 'prg':'1', 'prst':'17 May', 'pred':'29 Ramadan', 'prtm':'Tuesdays & Thursdays 11:00 AM to 12:00 PM', 'pli':'2017', 'pl':'Burooj Institute KAECHS', 'ad':'Burooj Institute, House No D-28, Block 1, KAECHS, Near Green Flag School, Baloch Colony Moin-ud-Din Road', 'ai':'', 'ar':'KAECHS', 'ct':'Karachi', 'rg':'Sindh', 'pti':'16', 'pt':'Institute', 'spi':'2000', 'sp':'Multiple Speakers', 'ph1':'0336-3199589', 'ph2':'', 'ori':'4', 'or':'Burooj Institute' },
+    { 'ord':63, 'pri':'10020', 'prt':'1', 'prg':'1', 'prst':'15 May', 'pred':'29 Ramadan', 'prtm':'10:00 AM to 01:00 PM', 'pli':'2016', 'pl':'Role Model Institute', 'ad':'Role Model Institute, Plot No 38-Y, Block 6 PECHS, Near Union Club', 'ai':'', 'ar':'PECHS', 'ct':'Karachi', 'rg':'Sindh', 'pti':'16', 'pt':'Institute', 'spi':'1003', 'sp':'Ustazah Rehana Baji', 'ph1':'0332-9757544', 'ph2':'021-34545836', 'ori':'3', 'or':'Role Model Institute' },
+];
+
+randomize();//to show programs in different order each time
+
+});
+</script>
+</body>
+</html>
